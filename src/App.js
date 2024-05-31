@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [id, setId] = useState("");
+  const [age, setAge] = useState(0);
+  const [password, setPassword] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "inline-flex", flexDirection: "column" }}>
+      <div style={{ display: "inline-flex", flexDirection: "row-reverse" }}>
+        <input
+          type="text"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+          style={{
+            padding: "4px",
+          }}
+        />
+        <button style={{ padding: "4px", marginLeft: "10px" }}>입력</button>
+      </div>
+      <div style={{ display: "inline-flex", flexDirection: "row-reverse" }}>
+        <input
+          type="number"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          style={{
+            padding: "4px",
+          }}
+        />
+        <button style={{ padding: "4px", marginLeft: "10px" }}>등록</button>
+      </div>
+      <div style={{ display: "inline-flex", flexDirection: "row-reverse" }}>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={{
+            padding: "4px",
+          }}
+        />
+        <button style={{ padding: "4px", marginLeft: "10px" }}>하하</button>
+      </div>
     </div>
   );
 }
